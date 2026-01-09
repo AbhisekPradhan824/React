@@ -1,0 +1,15 @@
+nav img {
+  border: none;
+}
+
+nav img:hover {
+  border: 2px solid blue;
+}
+main img:hover {
+  transform: scale(1.5);
+  transition: 2s;
+}
+main img {
+  transform: scale(1);
+  transition: 2s;
+}
