@@ -1,0 +1,11 @@
+/* Red glow for taken users */
+.is-invalid-shadow {
+  box-shadow: 0 0 10px rgba(220, 53, 69, 0.5) !important;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Green glow for available users */
+.is-valid-shadow {
+  box-shadow: 0 0 10px rgba(25, 135, 84, 0.5) !important;
+  transition: box-shadow 0.2s ease-in-out;
+}
