@@ -1,0 +1,24 @@
+<script>
+  class Product {
+    Name = "Samsung TV";
+    Rating = {
+      Customer: {
+        Rate: { count: 4.5 },
+      },
+      Vendor: {
+        Rate: { count: 3.6 },
+      },
+    };
+    get CustomerRating() {
+      return this.Rating.Customer.Rate.count;
+    }
+    set CustomerRating(newRate) {
+      this.Rating.Customer.Rate.count = newRate;
+    }
+  }
+  let obj = new Product();
+  obj.CustomerRating = parseFloat(prompt("Enter New Rating"));
+  document.write(
+    `Name= ${obj.Name} <br> Customer Rating= ${obj.CustomerRating}`,
+  );
+</script>
