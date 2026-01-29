@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script>
+      class HDFC_Bank_Version1 {
+        PersonalBanking = "Personal Banking Service - General Customers <br>";
+        NRIBanking = "NRI Banking Service - NRI Customers <br>";
+
+        Print() {
+          document.write(
+            `${this.PersonalBanking} <br> ${this.NRIBanking} <br>`,
+          );
+        }
+      }
+      class HDFC_Bank_Version2 extends HDFC_Bank_Version1 {
+        constructor() {
+          super();
+        }
+        CreditCards = "Credit Card Payments <br>";
+        Print() {
+          super.Print();
+          document.write(`${this.CreditCards}`);
+        }
+      }
+      class HDFC_Bank_Version3 extends HDFC_Bank_Version2 {
+        constructor() {
+          super();
+        }
+        Loan = "Personal and Car Loans <br>";
+        Print() {
+          super.Print();
+          document.write(`${this.Loan}`);
+        }
+      }
+
+      function handleInstallClick() {
+        let version = document.querySelector("select").value;
+
+        switch (version) {
+          case "version1":
+            var obj1 = new HDFC_Bank_Version1();
+            obj1.Print();
+            break;
+          case "version2":
+            var obj2 = new HDFC_Bank_Version2();
+            obj2.Print();
+            break;
+          case "version3":
+            var obj3 = new HDFC_Bank_Version3();
+            obj3.Print();
+            break;
+          default:
+            document.write("Please select a version");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <br />
+    <fieldset>
+      <legend>Install Bank App</legend>
+      <select>
+        <option value="-1">Select Version</option>
+        <option value="version1">Version1</option>
+        <option value="version2">Version2</option>
+        <option value="version3">Version3</option>
+      </select>
+    </fieldset>
+
+    <button class="btn btn-success" onclick="handleInstallClick()">
+      Install
+    </button>
+  </body>
+</html>
