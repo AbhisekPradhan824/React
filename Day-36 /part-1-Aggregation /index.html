@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
     <script>
       class HDFC_Bank_Version1 {
         PersonalBanking = "Personal Banking Service - General Customers <br>";
@@ -18,16 +22,56 @@
       class HDFC_Bank_Version2 {
         CreditCards = "Credit Card Payments <br>";
         Print() {
-          document.write(`${this.CreditCards}`);
           let obj = new HDFC_Bank_Version1();
           obj.Print();
+          document.write(`${this.CreditCards}`);
+        }
+      }
+      class HDFC_Bank_Version3 {
+        Loan = "Personal and Car Loans <br>";
+        Print() {
+          let obj1 = new HDFC_Bank_Version2();
+          obj1.Print();
+          document.write(`${this.Loan}`);
         }
       }
 
-      let obj2 = new HDFC_Bank_Version2();
-      obj2.Print();
+      function handleInstallClick() {
+        let version = document.querySelector("select").value;
+
+        switch (version) {
+          case "version1":
+            var obj1 = new HDFC_Bank_Version1();
+            obj1.Print();
+            break;
+          case "version2":
+            var obj2 = new HDFC_Bank_Version2();
+            obj2.Print();
+            break;
+          case "version3":
+            var obj3 = new HDFC_Bank_Version3();
+            obj3.Print();
+            break;
+          default:
+            document.write("Please select a version");
+        }
+      }
     </script>
   </head>
-  <body></body>
-</html>
+  <body>
+    <br />
+    <fieldset>
+      <legend>Install Bank App</legend>
+      <select>
+        <option value="-1">Select Version</option>
+        <option value="version1">Version1</option>
+        <option value="version2">Version2</option>
+        <option value="version3">Version3</option>
+      </select>
+    </fieldset>
 
+    <button class="btn btn-success" onclick="handleInstallClick()">
+      Install
+    </button>
+  </body>
+</html>
