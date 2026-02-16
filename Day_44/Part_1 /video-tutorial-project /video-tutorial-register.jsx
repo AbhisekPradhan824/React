@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useFormik } from "formik";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function TutorialRegister() {
   const navigate = useNavigate();
@@ -90,7 +90,9 @@ export function TutorialRegister() {
           Cancel
         </button>
       </form>
+      <p>
+        <Link to="/login">Existing user ? login</Link>
+      </p>
     </div>
   );
 }
-
