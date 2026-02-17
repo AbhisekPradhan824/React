@@ -40,7 +40,7 @@ export function TutorialRegister() {
   }, []);
   return (
     <div>
-      <form className="w-50">
+      <form className="w-50" onSubmit={formik.handleSubmit}>
         <h3>User Register</h3>
         <dl>
           <dt>User Id</dt>
@@ -83,9 +83,7 @@ export function TutorialRegister() {
           </dd>
         </dl>
 
-        <button onClick={formik.handleSubmit} className="btn btn-success me-2 ">
-          Register
-        </button>
+        <button className="btn btn-success me-2 ">Register</button>
         <button type="reset" className="btn btn-danger">
           Cancel
         </button>
