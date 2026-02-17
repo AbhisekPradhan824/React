@@ -3,6 +3,7 @@ import { TutorialHome } from "./video-tutorial-home";
 import { TutorialLogin } from "./video-tutorial-login";
 import { TutorialRegister } from "./video-tutorial-register";
 import { TutorialVideos } from "./video-tutorial-videos";
+import { TutorialInvalid } from "./video-tutorial-invalid";
 
 export function TutorialIndex() {
   return (
@@ -40,6 +41,7 @@ export function TutorialIndex() {
               <Route path="login" element={<TutorialLogin />} />
               <Route path="register" element={<TutorialRegister />} />
               <Route path="videos" element={<TutorialVideos />} />
+              <Route path="invalid" element={<TutorialInvalid />} />
             </Routes>
           </main>
         </section>
