@@ -16,7 +16,7 @@ let product: IProduct = {
   },
   Print: function () {
     console.log(`
-    Name:  ${this.Name}\n Price: ${this.Price} \n Qty: ${this.Qty} \n Total: ${this.Total()}`);
+    Name:  ${this.Name}\n Price: ${this.Price} \n Qty: ${this.Qty} \n Total: ${this.Total}`);
   },
 };
 product.Print();
