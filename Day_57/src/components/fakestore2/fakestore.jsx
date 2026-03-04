@@ -17,8 +17,6 @@ export function FakeStore() {
       rating: { rate: 0, count: 0 },
     },
   ]);
-  const [cartItems] = useState([]);
-  const [countitem, setCountItems] = useState(0);
   const [toggleTable, setToggleTable] = useState({ display: "none" });
   const dispatch = useDispatch();
 
@@ -47,6 +45,7 @@ export function FakeStore() {
   }
 
   function handleAddClick(product) {
+    alert(`${product.title} \n Added to Cart..`);
     dispatch(addToCart(product));
   }
 
